@@ -15,7 +15,7 @@ Usage
 ====
 It's easy!
 
-code::
+.. code::
 
   import numpy as np
   import matplotlib.pyplot as plt
@@ -44,7 +44,7 @@ code::
   bigwig.vip(clf, boston.feature_names, relative=True, num_features=10, bar=True,
              horizontal=True, color="lightgrey", fill="lightgrey")
 
-figure:: ./doc/images/default_example.png
+.. figure:: ./doc/images/default_example.png
 
 .. code::
 
