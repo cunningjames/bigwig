@@ -46,12 +46,12 @@ code::
 
 figure:: ./doc/images/default_example.png
 
-code::
+.. code::
 
   # Vertical:
   bigwig.vip(clf, boston.feature_names, horizontal=False)
 
-figure:: ./docs/images/non_default_example.png
+.. figure:: ./docs/images/non_default_example.png
 
 Currently only with GB and RF regressions from Scikit Learn.
 
