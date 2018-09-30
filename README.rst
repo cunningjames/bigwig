@@ -44,7 +44,7 @@ It's easy!
   bigwig.vip(clf, boston.feature_names, relative=True, num_features=10, bar=True,
              horizontal=True, color="lightgrey", fill="lightgrey")
 
-.. figure:: ./doc/images/default_example.png
+.. figure:: ./docs/images/default_example.png
 
 .. code::
 
