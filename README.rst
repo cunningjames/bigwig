@@ -3,14 +3,47 @@ bigwig
 ======
 
 
-Add a short description here!
+VERY EARLY STAGE Variable Importance Plot library
 
 
 Description
 ===========
 
-A longer description of your project goes here...
+A very early stage, highly incomplete, proof-of-concept Python variable importance plotting library using single dispatch to mimic R's VIP library.
 
+Usage
+====
+It's easy!::
+
+  import numpy as np
+  import matplotlib.pyplot as plt
+
+  from sklearn import ensemble
+  from sklearn import datasets
+  from sklearn.utils import shuffle
+  from sklearn.metrics import mean_squared_error
+
+  boston = datasets.load_boston()
+  X, y = shuffle(boston.data, boston.target, random_state=13)
+  X = X.astype(np.float32)
+  offset = int(X.shape[0] * 0.9)
+
+  X_train, y_train = X[:offset], y[:offset]
+  X_test, y_test = X[offset:], y[offset:]
+
+  params = {'n_estimators': 500, 'max_depth': 4, 'min_samples_split': 2,
+            'learning_rate': 0.01, 'loss': 'ls'}
+  clf = ensemble.GradientBoostingRegressor(**params)
+  clf.fit(X_train, y_train)
+
+  # defaults:
+  bigwig.vip(clf, boston.feature_names, relative=True, num_features=10, bar=True,
+             horizontal=True, color="lightgrey", fill="lightgrey")
+
+  # Vertical:
+  bigwig.vip(clf, boston.feature_names, horizontal=False)
+
+Currently only with GB and RF regressions from Scikit Learn.
 
 Note
 ====
