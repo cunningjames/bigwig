@@ -13,7 +13,9 @@ A very early stage, highly incomplete, proof-of-concept Python variable importan
 
 Usage
 ====
-It's easy!::
+It's easy!
+
+code::
 
   import numpy as np
   import matplotlib.pyplot as plt
@@ -22,6 +24,8 @@ It's easy!::
   from sklearn import datasets
   from sklearn.utils import shuffle
   from sklearn.metrics import mean_squared_error
+
+  import bigwig
 
   boston = datasets.load_boston()
   X, y = shuffle(boston.data, boston.target, random_state=13)
@@ -40,8 +44,13 @@ It's easy!::
   bigwig.vip(clf, boston.feature_names, relative=True, num_features=10, bar=True,
              horizontal=True, color="lightgrey", fill="lightgrey")
 
+figure:: figure:: ./doc/images/default_example.png
+
+code::
   # Vertical:
   bigwig.vip(clf, boston.feature_names, horizontal=False)
+
+figure:: ./docs/images/non_default_example.png
 
 Currently only with GB and RF regressions from Scikit Learn.
 
