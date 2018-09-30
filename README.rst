@@ -44,9 +44,10 @@ code::
   bigwig.vip(clf, boston.feature_names, relative=True, num_features=10, bar=True,
              horizontal=True, color="lightgrey", fill="lightgrey")
 
-figure:: figure:: ./doc/images/default_example.png
+figure:: ./doc/images/default_example.png
 
 code::
+
   # Vertical:
   bigwig.vip(clf, boston.feature_names, horizontal=False)
 
